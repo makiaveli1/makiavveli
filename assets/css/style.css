@@ -1,0 +1,923 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=IM+Fell+Great+Primer+SC&family=IM+Fell+Great+Primer:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Satisfy&display=swap");
+
+body {
+  background-color: #f3e9d2;
+  background-image: linear-gradient(
+      90deg,
+      transparent 50%,
+      rgba(238, 10, 10, 0.04) 50%
+    ),
+    linear-gradient(90deg, transparent 50%, rgba(230, 0, 0, 0.04) 50%),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  background-size: 50px 50px, 100px 100px, 100% 100%;
+  background-position: 50% 50%, 0 0, 0 0;
+  font-family: "IM Fell Great Primer SC", sans-serif;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #f7efdb, #e2d5b7 60%, #c9b084);
+  padding: 1rem 1rem;
+  width: 100vw;
+}
+
+.overlay-img {
+  transition: all 0.9s;
+  position: absolute;
+  background-image: url("../images/VELI-1.webp");
+  background-position: center bottom; /* Positioned at the bottom */
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  opacity: 2; /* Adjusted opacity */
+  z-index: -1;
+}
+
+.overlay-img:hover {
+  opacity: 0.5; /* Reduced opacity on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.biography-hero-image {
+  width: 100%; /* Taking up the full width of the page on mobile */
+  height: auto; /* Keeping the original aspect ratio */
+  display: block; /* Centering the image */
+  position: relative; /* Enabling positioning within the container */
+  z-index: -1;
+}
+
+.biography-hero-image img {
+  width: 100%; /* Filling the entire width of the container */
+  height: auto; /* Maintaining the original aspect ratio */
+  display: block; /* Centering the image */
+  margin: 0 auto; /* Centering the image horizontally */
+  border-bottom-left-radius: 5%; /* Slight circular effect on the bottom left corner */
+  border-bottom-right-radius: 5%; /* Slight circular effect on the bottom right corner */
+  transition: all 0.9s;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+.dates {
+  position: relative; /* Positioning relative to the parent container */
+  width: 100%; /* Filling the width of the container */
+  display: flex; /* Using flexbox for alignment */
+  flex-direction: row; /* Aligning the elements in a column */
+  align-items: center; /* Centering the content horizontally */
+  text-align: center; /* Centering the text */
+  font-family: "IM Fell Great Primer SC", sans-serif; /* Using the existing font */
+  margin-top: 1rem; /* Adding space above the dates */
+  padding-bottom: 1rem;
+  transition: all 1s;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+  border-radius: 10px;
+}
+
+.born,
+.died {
+  font-size: 10px; /* Adjusting the font size for mobile devices */
+  transition: all 0.5s;
+}
+
+.date {
+  font-size: 28px; /* Adjusting the font size for the dates */
+  font-weight: bold; /* Making the dates bold */
+  margin-bottom: 5px; /* Adding space below the dates */
+  transition: all 0.9s;
+}
+
+.separator {
+  display: block; /* Hiding the separator on mobile devices */
+  width: 50%; /* Filling the width of the container */
+  font-size: large;
+}
+
+.location {
+  font-size: 18px; /* Adjusting the font size for the location */
+  font-style: italic; /* Styling the location */
+  margin-bottom: 10px; /* Adding space below the location */
+  transition: all 1.5s;
+}
+
+.biography-section {
+  width: 100%;
+  padding: 1rem;
+  font-family: "IM Fell Great Primer SC", sans-serif; /* Vintage font */
+  background-color: #f9f4e0; /* Vintage background color */
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+.biography-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 1rem;
+  color: #5a4e42; /* Vintage text color */
+}
+
+.biography-content {
+  align-self: center;
+  width: 90%; /* Allowing some padding around the content */
+  max-height: 400px; /* Setting a maximum height for the scrollable container */
+  overflow-y: scroll; /* Enabling vertical scrolling */
+  border: 2px solid #a89f91; /* Vintage border style */
+  margin: 0 auto; /* Centering the container */
+  text-align: justify; /* Justifying the text */
+  line-height: 1.5; /* Improving readability */
+  color: #181614; /* Vintage text color */
+}
+
+.biography-section,
+.literary-works {
+  background: linear-gradient(
+    135deg,
+    #f9f4e0 25%,
+    #e9e1cc 25%,
+    #e9e1cc 50%,
+    #f9f4e0 50%,
+    #f9f4e0 75%,
+    #e9e1cc 75%
+  );
+  background-size: 40px 40px;
+  color: #5a4e42; /* Vintage text color */
+  padding: 0.5rem 2rem;
+  transition: all 0.5s;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+.literary-works {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  background-color: #f9f4e0; /* Vintage background color */
+  transition: all 0.5s;
+}
+
+.literary-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 0.5rem;
+  color: #5a4e42; /* Vintage text color */
+}
+
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centering the works on the screen */
+  margin: 5rem auto;
+}
+
+.work {
+  width: 30%; /* Adjust as needed for responsiveness */
+  text-align: center; /* Centering the images and titles */
+  margin: 1rem;
+}
+
+.work img {
+  max-width: 100%; /* Ensuring the images are responsive */
+  height: auto;
+  display: block; /* Centering the images */
+  margin: 0 auto;
+}
+
+.work h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.work a {
+  color: #b1454a;
+}
+
+#logo-svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #b1454a;
+}
+
+/* Hide Checkbox */
+#menu-toggle {
+  display: none; /* Hide the actual checkbox */
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#menu-icon {
+  cursor: pointer;
+  font-size: 30px;
+  display: none; /* Initially hidden, will be displayed on smaller screens */
+}
+
+nav {
+  position: absolute;
+  top: 100%;
+  background-color: #c9b084;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  padding: 1rem 1rem;
+  box-shadow: 0 2px 2px #3a3a3a;
+  display: none;
+  text-decoration: none;
+  z-index: 1;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b1454a;
+  z-index: 1;
+}
+
+nav li {
+  list-style-type: none;
+  justify-content: center;
+  padding-top: 10px;
+  z-index: 1;
+}
+
+/* Hamburger Menu Icon */
+label[for="menu-toggle"] {
+  cursor: pointer;
+  font-size: 50px;
+  display: none; /* Hide by default */
+  position: absolute; /* Positioning */
+  top: 10px;
+  right: 10px;
+  height: 2.5rem;
+  color: #b1454a;
+}
+
+#menu-toggle:checked + #menu-icon {
+  /* css for "X" shape when menu is toggled on */
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ #nav-menu {
+  display: block;
+}
+
+#heading {
+  font-size: 6.5rem;
+  text-align: center;
+  color: #b1454a;
+  padding-top: 30px;
+  z-index: -5;
+}
+
+/* Common Styles for All Quotes */
+.quote {
+  font-family: "IM Fell Great Primer SC", sans-serif;
+  font-size: 1.3rem;
+  margin: 20px;
+  padding: 20px;
+  display: none; /* Hide all quotes by default */
+}
+
+.quote-container {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  z-index: 99;
+  width: 100%;
+  padding-left: 15px;
+}
+
+.quote {
+  padding-left: 0.5rem;
+  transform: scale(0.5rem);
+  transition: all 1s ease-out;
+}
+
+.explore-button {
+  position: absolute; /* Absolute positioning */
+  bottom: 80px; /* 10px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  transition: all 0.9s;
+  display: inline-block;
+  background-color: #b1454a; /* Vintage brown color */
+  color: #fff; /* White text color */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #fff; /* White border */
+  font-family: "IM Fell Great Primer SC", sans-serif; /* Vintage font style */
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: 0.3s; /* Transition effect */
+}
+
+.explore-button:hover {
+  background-color: #fff; /* White background on hover */
+  color: #8c7851; /* Vintage brown text color on hover */
+  border: 2px solid #8c7851; /* Vintage brown border on hover */
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8c7851; 
+  border-radius: 5px;
+  z-index: -1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b1454a; 
+}
+
+/* Signup Container */
+.signup-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f7efdb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "IM Fell Great Primer SC", sans-serif;
+  color: #3a3a3a;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+/* Join Us Heading */
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #b1454a;
+  transition: all 0.8s;
+}
+
+/* Signup Description */
+.signup-container p {
+  font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  transition: all 0.8s;
+}
+
+/* Signup Form */
+.signup-form {
+  display: grid;
+  gap: 15px;
+  transition: all 0.8s;
+}
+
+/* Form Labels */
+.signup-form label {
+  font-size: 0.9rem;
+  transition: all 0.8s;
+}
+
+/* Form Inputs */
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #c9b084;
+  background: #e2d5b7;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Submit Button */
+.signup-form button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: #b1454a;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  transition: all 0.8s;
+}
+
+.signup-form button:hover {
+  background-color: #903a35;
+  transition: all 0.8s;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.map-container iframe {
+  border-radius: 100px;
+  border: 2px solid #b1454a;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+/* Invitation Text */
+.invitation-text {
+  text-align: center;
+  font-family: "IM Fell Great Primer SC", sans-serif;
+  font-size: 25px;
+  color: #3a3a3a;
+  padding: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(236, 23, 23, 0.658);
+}
+
+.invitation-text strong {
+  color: #b1454a;
+}
+
+.invitation-text h2 {
+  padding: 10px;
+}
+
+
+
+/* Footer Styles */
+footer {
+  list-style-type: none;
+  color: #000000; /* Text color */
+  padding: 5px 0; /* Padding around the content */
+  text-align: center; /* Centering the text */
+  word-spacing: 20px; /* Spacing between words */
+  position: fixed; /* Absolute positioning */
+  left: 0; /* Aligning to the left */
+  bottom: 0; /* Sticking to the bottom */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+.footer-link {
+  list-style-type: none; /* List style type */
+  text-decoration: none; /* Removing underline */
+  color: #5e3939; /* Text color for links */
+}
+
+#site-footer li {
+  font-size: 170%;
+  padding: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    display: block; /* Initially hidden, will be displayed on smaller screens */
+  }
+
+  .explore-button {
+    padding: 10px 10px;
+  }
+
+  #heading {
+    font-size: 2.5rem;
+    z-index: -3;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  #quote1 {
+    display: block; /* Show quote 1 */
+    word-spacing: 2px;
+    text-align: center;
+  }
+
+  .overlay-img {
+    background-position: center bottom;
+  }
+
+  label[for="menu-toggle"] {
+    display: block; /* Show on mobile */
+  }
+
+  #site-footer {
+    list-style-type: none;
+    background: linear-gradient(to bottom, #f7efdb, #e2d5b7 60%, #c9b084);
+    box-shadow: #b1454a;
+  }
+}
+
+/* Tablets: Left alignment for Quotes 1 and 2 */
+@media (min-width: 768px) {
+  #menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    display: block; /* Initially hidden, will be displayed on smaller screens */
+  }
+
+  #heading {
+    font-size: 6.5rem;
+    text-align: center;
+    color: #b1454a;
+    padding-top: 30px;
+  }
+
+  .heading-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .quote-container {
+    flex-direction: column;
+  }
+
+  #quote1 {
+    display: block;
+    width: 30%; /* Adjust width */
+    text-align: left;
+  }
+
+  #quote2 {
+    display: block;
+    width: 30%; /* Adjust width */
+    right: 60%; /* Aligning to the left */
+    text-align: right; /* Aligning to the left */
+  }
+
+  .quote-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  #site-footer {
+    list-style-type: none;
+    background: linear-gradient(to bottom, #f7efdb, #e2d5b7 60%, #c9b084);
+    box-shadow: #b1454a;
+  }
+
+  .overlay-img {
+    z-index: -1;
+  }
+}
+/* laptop screens */
+@media (min-width: 1024px) {
+  header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #f7efdb, #e2d5b7 60%, #c9b084);
+    padding: 1rem 1rem;
+    width: 100vw;
+  }
+
+  nav {
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: center; /* Center the navigation links horizontally */
+    height: 70%;
+    position: relative; /* Sticky positioning */
+    background: none; /* Remove background */
+    box-shadow: none;
+  }
+
+  nav ul {
+    list-style-type: none; /* Remove list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center text */
+  }
+
+  nav li {
+    display: inline-block; /* Display links inline */
+    margin: 0 15px; /* Add spacing between links */
+  }
+
+  #menu-toggle,
+  label[for="menu-toggle"] {
+    display: none; /* Hide checkbox and label */
+  }
+
+  #menu-icon {
+    display: none; /* Hide checkbox and label */
+  }
+
+  .quote-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .quote {
+    display: block;
+    flex-basis: 25vw;
+  }
+
+  #quote1,
+  #quote2 {
+    display: block;
+    text-align: right;
+  }
+
+  #quote3,
+  #quote4 {
+    display: block;
+    text-align: left;
+  }
+
+  .biography-hero-image img {
+    border-bottom-left-radius: 0; /* Remove the border radius on the bottom left corner */
+  }
+
+  .biography-hero-image {
+    width: 40%; /* Adjust width for desktop */
+    float: left; /* Position on the left side */
+  }
+
+  .works-container {
+    top: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* Display works in a single row */
+  }
+
+  .work {
+    width: 5%; /* Adjust width for desktop */
+    color: #b1454a;
+  }
+
+  .work a {
+    color: #b1454a;
+  }
+
+  .video-container {
+    position: absolute;
+    scale: 1.1;
+    top: 60%;
+    width: 50%; /* Reduce the size of the video */
+    left: 50%;
+    margin-right: 4rem; /* Space between the video and the following content */
+    z-index: -2;
+  }
+
+  .video-container iframe {
+    width: 80%; /* Filling the entire width of the container */
+    height: 45%; /* Maintain aspect ratio */
+  }
+
+  .separator {
+    display: block;
+    font-size: 50px; /* Increasing the font size for the separator */
+    font-weight: 10;
+    margin: 10px; /* Adding space around the separator */
+  }
+
+  .dates {
+    position: absolute; /* Relative positioning for responsiveness */
+    top: 45rem; /* Resetting bottom positioning */
+    left: 10%; /* Resetting left positioning */
+    right: 40%; /* Resetting left positioning */
+    width: 80%; /* Matching the width of the hero image */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Centering the content */
+    align-items: center;
+    flex-direction: row; /* Stacking the elements vertically */
+    margin-top: 1px; /* Space between the image and the dates */
+  }
+
+  .born,
+  .died,
+  .date,
+  .separator,
+  .location {
+    text-align: center; /* Centering the text */
+  }
+
+  .biography-section {
+    position: absolute;
+    width: 50%;
+    padding-right: 1rem;
+    left: 45%;
+    z-index: -1;
+  }
+
+  .biography-content {
+    align-self: center;
+    width: 90%; /* Allowing some padding around the content */
+    max-height: 400px; /* Setting a maximum height for the scrollable container */
+    padding: 1rem;
+  }
+
+  .biography-title {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    color: #5a4e42; /* Vintage text color */
+  }
+
+  .biography-section,
+  .literary-works {
+    background-size: 40px 40px;
+    padding: 2rem 2rem;
+  }
+
+  .literary-works {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    z-index: -1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #f7efdb, #e2d5b7 60%, #c9b084);
+    padding: 0.5rem 0.5rem;
+  }
+
+  nav {
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: center; /* Center the navigation links horizontally */
+    height: 70%;
+    left: 0;
+    right: 0;
+    position: relative; /* Sticky positioning */
+    background: none; /* Remove background */
+    box-shadow: none;
+  }
+
+  nav ul {
+    list-style-type: none; /* Remove list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center text */
+  }
+
+  nav li {
+    display: inline-block; /* Display links inline */
+    margin: 0 15px; /* Add spacing between links */
+  }
+
+  #menu-toggle,
+  label[for="menu-toggle"] {
+    display: none; /* Hide checkbox and label */
+  }
+
+  .quote-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .quote {
+    display: block;
+    flex-basis: 25vw;
+  }
+
+  #quote1,
+  #quote2 {
+    display: block;
+    text-align: right;
+  }
+
+  #quote3,
+  #quote4 {
+    display: block;
+    text-align: left;
+  }
+
+  .biography-hero-image img {
+    border-bottom-left-radius: 0; /* Remove the border radius on the bottom left corner */
+  }
+
+  .biography-hero-image {
+    width: 30%; /* Adjust width for desktop */
+    float: left; /* Position on the left side */
+  }
+
+  .works-container {
+    top: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* Display works in a single row */
+  }
+
+  .work {
+    width: 20%; /* Adjust width for desktop */
+  }
+  .video-container {
+    scale: 0.7;
+    top: 28rem;
+    width: 50%; /* Reduce the size of the video */
+    left: 45%;
+    margin-right: 4rem; /* Space between the video and the following content */
+    z-index: -1;
+  }
+
+  .video-container iframe {
+    width: 80%; /* Filling the entire width of the container */
+    height: 45%; /* Maintain aspect ratio */
+  }
+
+  .separator {
+    display: block;
+    font-size: 50px; /* Increasing the font size for the separator */
+    font-weight: 10;
+    margin: 10px; /* Adding space around the separator */
+  }
+
+  .dates {
+    position: relative; /* Relative positioning for responsiveness */
+    top: 1rem; /* Resetting bottom positioning */
+    left: 10%; /* Resetting left positioning */
+    right: 40%; /* Resetting left positioning */
+    width: 80%; /* Matching the width of the hero image */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Centering the content */
+    align-items: center;
+    flex-direction: row; /* Stacking the elements vertically */
+    margin-top: 1px; /* Space between the image and the dates */
+  }
+
+  .born,
+  .died,
+  .date,
+  .separator,
+  .location {
+    text-align: center; /* Centering the text */
+  }
+
+  .biography-section {
+    position: absolute;
+    width: 50%;
+    padding-right: 1rem;
+    left: 40%;
+    z-index: -1;
+  }
+
+  .biography-content {
+    align-self: center;
+    width: 90%; /* Allowing some padding around the content */
+    max-height: 400px; /* Setting a maximum height for the scrollable container */
+    padding: 1rem;
+  }
+
+  .biography-title {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    color: #5a4e42; /* Vintage text color */
+  }
+
+  .biography-section,
+  .literary-works {
+    background-size: 40px 40px;
+    padding: 2rem 2rem;
+  }
+
+  .literary-works {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    z-index: -1;
+  }
+}
